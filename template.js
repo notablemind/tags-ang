@@ -1,0 +1,1 @@
+module.exports = '<div class="d-tags"><div data-ng-repeat="tag in tags" class="tag">{{ tag }}<i class="icon-delete"></i></div><input/></div>';
