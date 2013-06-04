@@ -1,9 +1,10 @@
 
-var template = require('template');
+var template = require('./template');
 
 var ng = {
   deps: {},
-  directive: {
+  directive: function(){
+    return {
     scope: {},
     replace: true,
     restrict: 'A',
@@ -18,6 +19,7 @@ var ng = {
         scope.$parent[name] = value;
       });
     }
+  };
   }
 };
 
