@@ -4,7 +4,9 @@
   "description": "Tags angular directive",
   "version": "0.0.1",
   "keywords": [],
-  "dependencies": {},
+  "dependencies": {
+    "jabapyth/angularjs": "*"
+  },
   "development": {},
   "license": "MIT",
   "main": "index.js",
