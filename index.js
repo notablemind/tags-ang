@@ -2,7 +2,7 @@
 var template = require('./template')
   , angular = require('angularjs');
 
-angular.module('tags', [])
+module.exports = angular.module('tags', [])
   .directive(function(){
     return {
       scope: {},
