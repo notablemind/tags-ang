@@ -1,5 +1,8 @@
 .d-tags
-  .tag(data-ng-repeat='tag in tags')
-    | {{ tag }}
-    i.icon-delete
-  input
+  .tag(data-ng-repeat='tag in tags', ng-switch='editing === $index && focused')
+    input(ng-switch-when='true', ng-model='tag.value', ng-keydown='midKey($event, $index)', ng-blur='blurMid()')
+    span(ng-switch-default, ng-click='edit($index)')
+      | {{ tag.value }}
+      i.icon-delete
+  input.end(ng-model='new_tag', ng-show='editing === false && focused', ng-keydown='endKey($event)', ng-blur='blurEnd()')
+  .add(ng-click='focus()') +

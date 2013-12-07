@@ -5,7 +5,8 @@
   "version": "1.0.0",
   "keywords": [],
   "dependencies": {
-    "jaredly/angularjs": "*"
+    "jaredly/angularjs": "*",
+    "notablemind/keys": "*"
   },
   "development": {},
   "license": "MIT",
@@ -16,5 +17,6 @@
   ],
   "styles": [
     "tags.css"
-  ]
+  ],
+  "remotes": []
 }
