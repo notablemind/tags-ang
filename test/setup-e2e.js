@@ -1,6 +1,5 @@
 
-var angular = require('angularjs')
-  , tags = require('tags')
+var tags = require('tags')
 
 angular.module('test', ['tags'])
   .factory('$exceptionHandler', function () {

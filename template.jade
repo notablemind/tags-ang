@@ -1,8 +1,16 @@
-.d-tags
-  .tag(data-ng-repeat='tag in tags', ng-switch='editing === $index && focused')
-    input(ng-switch-when='true', ng-model='tag.value', ng-keydown='midKey($event, $index)', ng-blur='blurMid()')
-    span(ng-switch-default, ng-click='edit($index)')
+.tags
+  span.tag(data-ng-repeat='tag in tags', ng-switch='editing === $index && focused')
+    input(ng-switch-when='true',
+          ng-model='tag.value',
+          ng-keydown='midKey($event, $index)',
+          ng-blur='blurMid($index)',
+          ng-style='inWidth(tag.value)')
+    span.text(ng-switch-when='false', ng-click='edit($index)')
       | {{ tag.value }}
-      i.icon-delete
-  input.end(ng-model='new_tag', ng-show='editing === false && focused', ng-keydown='endKey($event)', ng-blur='blurEnd()')
-  .add(ng-click='focus()') +
+      span.small-btn(ng-click='remove($index)') &times;
+  input.end(ng-model='new_tag',
+      ng-show='editing === false && focused',
+      ng-keydown='endKey($event)',
+      ng-blur='blurEnd()',
+      ng-style='inWidth(new_tag)')
+  span.plus.small-btn.add(ng-click='focus()') +

@@ -5,7 +5,6 @@
   "version": "1.0.0",
   "keywords": [],
   "dependencies": {
-    "jaredly/angularjs": "*",
     "notablemind/keys": "*"
   },
   "development": {},
