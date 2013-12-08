@@ -7,7 +7,7 @@ var template = require('./template')
 module.exports = angular.module('tags', [])
   .directive('tags', function(){
     return {
-      scope: {},
+      scope: {tags: '=tags'},
       replace: true,
       restrict: 'A',
       template: template,
@@ -15,17 +15,9 @@ module.exports = angular.module('tags', [])
         var name = attrs.note;
         var localName = 'tags';
         scope.editing = false;
-        scope.tags = [{value: 'one'}, {value: 'two'}, {value: 'three'}]
         scope.focused = false;
         scope.new_tag = ''
 
-        scope.$parent.$watch(name, function(value) {
-          if (!value) return
-          scope[localName] = value;
-        });
-        scope.$watch(localName, function(value) {
-          scope.$parent[name] = value;
-        });
         scope.$watch('editing', function (value) {
           if ('undefined' === typeof value) return
           if (false === scope.focused) return
